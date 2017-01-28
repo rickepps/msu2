@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.center {
+			width: 50%;
+			margin: 0 auto;
+			text-align: center;
+			background-color: yellow;
+		}
+		.fullWidth {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+
+<div class="center">
+	<img class="fullWidth" src="http://www.placecage.com/c/600/400">
+	<button id='decrease'> last </button>
+	<button id='increase'> next </button>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+	var cage = 400;
+	var cageURL = "http://www.placecage.com/c/600/"
+
+	$('button').click(function(){
+
+		if($(this).attr('id')==='increase'){
+			cage = cage + 1;
+		 } else {
+		 	cage = cage - 1;
+		 }
+		 var cageString = cage.toString();
+		 var newCage = cageURL + cageString;
+		 console.log(newCage);
+		$('img').attr("src", newCage);
+	})
+
+</script>
+
+</body>
+</html>
